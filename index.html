@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczMuK-AqSL7JWmwIe9o74_xPSgOds4Hwa14wobnWtfhCZz080APy0KCJ1aZdwNrn1ShEs32uHvzWZBnrmwk-PZpQ_6IPBZo_aXyx-75lMqh907AGOUbpINR5VEkDxWzzxYKVvxnRvIP9Ffl5M0j3Opk=w301-h92-s-no-gm?authuser=0" alt="Logo">
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <nav class="menu">
+          <a href="#">Home</a>
+          <a href="#">Categories</a>
+          <a href="#">Promos</a>
+        </nav>
+        <div class="actions">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search">
+          </div>
+          <i class="fas fa-heart">
+            <span class="badge">3</span>
+          </i>
+          <i class="fas fa-shopping-cart">
+            <span class="badge">2</span>
+          </i>
+          <i class="fas fa-user user-img"></i>
+        </div>
+      </header>
+      <!-- Main Content -->
+      <div class="main">
+        <!-- Left Section -->
+        <div class="left-section">
+          <div class="breadcrumb">
+            <span>
+              <i class="fas fa-shopping-cart"></i> Cart </span>
+            <span>
+              <i class="fas fa-truck"></i> Shipping </span>
+            <span>
+              <i class="fas fa-check-circle"></i> Checkout </span>
+          </div>
+          <h2>Payment Method</h2>
+          <div class="payment-method">
+            <div class="dropdown">
+              <select>
+                <option>Google Pay</option>
+                <option>Debit Card</option>
+                <option>Credit Card</option>
+              </select>
+            </div>
+          </div>
+          <div class="payment-method">
+            <div class="dropdown">
+              <select>
+                <option>Google Pay</option>
+                <option>Debit Card</option>
+                <option>Credit Card</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-options">
+            <label>
+              <input type="radio" name="card" checked>
+              <div class="card-details">
+                <img src="https://via.placeholder.com/40" alt="MasterCard">
+                <span>Axis Bank **** 4578</span>
+              </div>
+            </label>
+            <label>
+              <input type="radio" name="card">
+              <div class="card-details">
+                <img src="https://via.placeholder.com/40" alt="Visa">
+                <span>HDFC Bank **** 4521</span>
+              </div>
+            </label>
+          </div>
+          <div class="addcard-add-new-card" id="openModalBtn">
+            <i class="fas fa-plus-circle"></i> Add New Cards
+          </div>
+          <!-- The Modal -->
+          <div id="myModal" class="addcard-modal">
+            <!-- Modal content -->
+            <div class="addcard-modal-content">
+              <span class="addcard-close" id="closeModalBtn">&times;</span>
+              <h2>Add New Card</h2>
+              <form action="#" method="POST" class="addcard-form-container">
+                <!-- Card Number -->
+                <label for="card-type">Card Name</label>
+                <select id="card-type" name="card-type" required>
+                  <option value="credit">Select Your Card </option>
+                  <option value="credit">Visa Card </option>
+                  <option value="debit">Debit Card</option>
+                  <option value="loyalty">Paypel Master Card</option>
+                  <option value="loyalty">Payoneer Master Card</option>
+                </select>
+                <!-- Expiration Date -->
+                <label for="expiration-date">Expiration Date (MM/YY)</label>
+                <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+                <!-- CVV -->
+                <label for="cvv">CVV</label>
+                <input type="number" id="cvv" name="cvv" placeholder="Enter CVV" required>
+                <!-- Cardholder Name -->
+                <label for="cardholder-name">Cardholder Name</label>
+                <input type="text" id="cardholder-name" name="cardholder-name" placeholder="Full Name" required>
+                <!-- Billing Address -->
+                <label for="billing-country">Country</label>
+                <input type="text" id="billing-country" name="billing-country" placeholder="Country" required>
+                <label for="billing-state">State/Province</label>
+                <input type="text" id="billing-state" name="billing-state" placeholder="State/Province" required <label for="billing-city">City</label>
+                <input type="text" id="billing-city" name="billing-city" placeholder="City" required>
+                <label for="billing-postal">Postal Code</label>
+                <input type="text" id="billing-postal" name="billing-postal" placeholder="Postal Code" required>
+                <label for="billing-address">Billing Address</label>
+                <input type="text" id="billing-address" name="billing-address" placeholder="Street Address" required>
+                <!-- Card Type -->
+                <!-- Optional Fields -->
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phone-number" placeholder="Phone Number">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Email Address">
+                <!-- Submit Button -->
+                <button type="submit" class="addcard-submit-btn">Add Card</button>
+              </form>
+            </div>
+          </div>
+          <!--------End Add New Card --->
+          <div class="addpayment-new-method">
+            <i class="fas fa-plus-circle"></i> Add New Method
+          </div>
+          <!-- Popup Modal for Adding Payment Method -->
+          <div id="addpayment-payment-popup" class="addpayment-modal">
+            <div class="addpayment-modal-content">
+              <h2>Add New Payment Method</h2>
+              <form id="addpayment-payment-form">
+                <!-- Payment Method Type -->
+                <label for="addpayment-payment-type">Payment Method</label>
+                <select id="addpayment-payment-type" class="addpayment-select" required>
+                  <option value="credit-card">Credit Card</option>
+                  <option value="paypal">PayPal</option>
+                  <option value="bank-transfer">Bank Transfer</option>
+                </select>
+                <!-- Credit Card Fields -->
+                <div id="addpayment-credit-card-fields" class="addpayment-payment-method-fields">
+                  <input type="text" id="addpayment-cardholder-name" class="addpayment-input" placeholder="Cardholder Name" required>
+                  <input type="text" id="addpayment-card-number" class="addpayment-input" placeholder="Card Number" required>
+                  <input type="text" id="addpayment-expiry-date" class="addpayment-input" placeholder="Expiry-Date (MM/YY)" pattern="(?:0[1-9]|1[0-2])\/\d{2}" required>
+                  <input type="text" id="addpayment-cvv" class="addpayment-input" placeholder="CVV" required>
+                </div>
+                <!-- PayPal Fields -->
+                <div id="addpayment-paypal-fields" class="addpayment-payment-method-fields" style="display: none;">
+                  <input type="email" id="addpayment-email-address" class="addpayment-input" placeholder="Email Address" required>
+                </div>
+                <!-- Bank Transfer Fields -->
+                <div id="addpayment-bank-transfer-fields" class="addpayment-payment-method-fields" style="display: none;">
+                  <input type="text" id="addpayment-account-holder-name" class="addpayment-input" placeholder="Account Holder Full Name" required>
+                  <input type="text" id="addpayment-bank-name" class="addpayment-input" placeholder="Bank Name" required>
+                  <input type="text" id="addpayment-account-number" class="addpayment-input" placeholder="Account Number" required>
+                  <input type="text" id="addpayment-routing-number" class="addpayment-input" placeholder="Routing Number" required>
+                  <!-- Country Dropdown -->
+                  <select id="addpayment-country" class="addpayment-select" required>
+                    <option value="USA">Select Country</option>
+                    <option value="USA">United States</option>
+                    <option value="UK">United Kingdom</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Australia">Australia</option>
+                    <option value="India">India</option>
+                    <!-- Add more countries as needed -->
+                  </select>
+                  <!-- City Dropdown -->
+                  <select id="addpayment-city" class="addpayment-select" required>
+                    <option value="NewYork">Select City</option>
+                    <option value="NewYork">New York</option>
+                    <option value="London">London</option>
+                    <option value="Toronto">Toronto</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Sydney">Sydney</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <!-- Add more cities as needed -->
+                  </select>
+                </div>
+                <!-- Billing Address -->
+                <input type="text" id="addpayment-billing-address" class="addpayment-input" placeholder="Billing Address" required>
+                <!-- Save Payment Option -->
+                <label class="addpayment-save-payment-checkbox">
+                  <input type="checkbox" id="addpayment-save-payment-method"> Save this payment method for future use </label>
+                <!-- Submit Button -->
+                <button type="submit">Add Payment Method</button>
+              </form>
+              <!-- Close Button -->
+              <button class="addpayment-close-modal">Close</button>
+            </div>
+          </div>
+        </div>
+        <!-- Right Section -->
+        <div class="right-section">
+          <div class="summary">
+            <div id="myDiv" class="product">
+              <img src="https://s.alicdn.com/@sc04/kf/Sf8162641876249afa71bd667161084f4C.png_720x720q50.png" alt="Tire">
+              <h4>Goodyear Wrangler Workhorse AT Tire <br>$ <span id="add-total">289</span>.00 </h4>
+              <i id="closeButton" class="fas fa-times close-icon"></i>
+            </div>
+            <div class="offers">
+              <div class="i-dic">
+                <label for="coupon-code"></label>
+                <input type="text" id="coupon-code" placeholder="Add Code">
+                <button id="add-coupon">Add</button>
+              </div>
+              <div id="message" class="message"></div>
+            </div>
+            <div class="payment-details">
+              <h3>Payment Details</h3>
+              <br>
+              <div class="row">
+                <span>Order:</span>
+                <div class="editable-field">$ <span id="editable-price" class="dollar-sign" data-type="number">287</span>.00 <i class="fa-regular fa-pen-to-square edit-icon" data-edit-target="editable-price"></i>
+                </div>
+              </div>
+              <div class="row button-padding" id="delivery-row">
+                <span>Delivery:</span>
+                <div class="editable-field">$ <span id="editable-delevery" class="dollar-sign" data-type="number">2</span>.00 <i class="fa-regular fa-pen-to-square edit-icon" data-edit-target="editable-delevery"></i>
+                </div>
+              </div>
+              <div class="row dis-none button-padding" id="cupon-dis">
+                <span>Discount:</span>
+                <div class="editable-field" style="padding-right: 17px;">$ - <span id="editable-discount" class="dollar-sign" data-type="number">2</span>.00
+                  <!-- <i class="fa-regular fa-pen-to-square edit-icon" data-edit-target="editable-discount"></i> -->
+                </div>
+              </div>
+              <div class="row">
+                <span>Total:</span>
+                <div style="padding-right: 17px;">$ <span id="total" class="dollar-sign" data-type="number">289</span>.00 </div>
+              </div>
+            </div>
+            <br>
+            <div class="row2 ">
+              <span>Address:</span>
+              <div class="editable-field">
+                <span id="editable-address" data-type="text">12, WLS Regency</span>
+                <i class="fa-regular fa-pen-to-square edit-icon" data-edit-target="editable-address"></i>
+              </div>
+            </div>
+            <button class="pay-now">Pay Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+     
+    </script>
+  </body>
+</html>
